@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  TipCalculationView.swift
 //  TipCalculator
 //
 //  Created by Russell Gordon on 2025-03-18.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct TipCalculationView: View {
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -20,5 +20,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    TipCalculationView()
 }
