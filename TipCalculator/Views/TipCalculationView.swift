@@ -25,31 +25,33 @@ struct TipCalculationView: View {
                 // If we got valid input, show it!
                 if let tipCalculationResult = viewModel.tipCalculationResult {
                     
-                    HStack {
-                        Text("Bill amount:")
-                            .bold()
-                        
-                        Text("\(tipCalculationResult.billAmount.formatted(.currency(code: "CAD")))")
+                    VStack {
+                        HStack {
+                            Text("Bill amount:")
+                                .bold()
+                            
+                            Text("\(tipCalculationResult.billAmount.formatted(.currency(code: "CAD")))")
+                        }
+                        HStack {
+                            Text("Tip percentage:")
+                                .bold()
+                            
+                            Text("\(tipCalculationResult.tipPercentage.formatted(.percent))")
+                        }
+                        HStack {
+                            Text("Tip dollar amount:")
+                                .bold()
+                            
+                            Text("\(tipCalculationResult.tipAmount.formatted(.currency(code: "CAD")))")
+                        }
+                        HStack {
+                            Text("Total amount of bill:")
+                                .bold()
+                            
+                            Text("\(tipCalculationResult.totalAmount.formatted(.currency(code: "CAD")))")
+                        }
                     }
-                    HStack {
-                        Text("Tip percentage:")
-                            .bold()
-                        
-                        Text("\(tipCalculationResult.tipPercentage.formatted(.percent))")
-                    }
-                    HStack {
-                        Text("Tip dollar amount:")
-                            .bold()
-                        
-                        Text("\(tipCalculationResult.tipAmount.formatted(.currency(code: "CAD")))")
-                    }
-                    HStack {
-                        Text("Total amount of bill:")
-                            .bold()
-                        
-                        Text("\(tipCalculationResult.totalAmount.formatted(.currency(code: "CAD")))")
-                    }
-                    
+                    .frame(height: 200)
                     
                 } else {
                     
@@ -59,6 +61,7 @@ struct TipCalculationView: View {
                         systemImage: "gear.badge.questionmark",
                         description: Text(viewModel.recoverySuggestion)
                     )
+                    .frame(height: 200)
                     
                 }
                 
@@ -72,6 +75,7 @@ struct TipCalculationView: View {
                     .textFieldStyle(.roundedBorder)
 
                 // Show a history of prior calculations
+                Spacer()
                 
             }
             .padding()
